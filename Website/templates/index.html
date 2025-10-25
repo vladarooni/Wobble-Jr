@@ -1,10 +1,46 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html>
-    <head><title>RoArm Control</title></head>
-    <body>
-        <h1>Wobble Jr Controls</h1>
-        <button> onclick="location.href='/command/wave'">Wave</button>
-        <button> onclick="location.href='/command/lamp'">Lamp Mode</button>
-        <!--- add more buttons -->
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Wobble Jr Controls</title>
+    <style>
+      body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+      button {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover { background-color: #0056b3; }
+    </style>
+  </head>
+  <body>
+    <h1>Wobble Jr Controls</h1>
+
+    <button onclick="sendCommand('wave')">Wave</button>
+    <button onclick="sendCommand('lamp')">Lamp Mode</button>
+
+    <p id="status"></p>
+
+    <script>
+      function sendCommand(action) {
+        fetch(`/command/${action}`)
+          .then(response => {
+            if (response.ok) {
+              document.getElementById('status').textContent = `${action} executed`;
+            } else {
+              document.getElementById('status').textContent = `Error running ${action}`;
+            }
+          })
+          .catch(err => {
+            document.getElementById('status').textContent = `Connection error`;
+          });
+      }
+    </script>
+  </body>
 </html>
