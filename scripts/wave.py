@@ -14,7 +14,7 @@ def send_wave(ip="192.168.4.1"):
             response_up = requests.get(url_up)
             print("Move up response:", response_up.text)
 
-            #wait 2 seconds
+            #wait 
             time.sleep(.35)  
 
             #move elbow down
@@ -22,7 +22,7 @@ def send_wave(ip="192.168.4.1"):
             response_down = requests.get(url_down)
             print("Move down response:", response_down.text)
 
-            #wait 2 seconds
+            #wait 
             time.sleep(.35)  
 
     except Exception as e:
