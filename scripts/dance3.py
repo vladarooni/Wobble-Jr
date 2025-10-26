@@ -1,9 +1,10 @@
-#move side to side
+#elbow front and back
 import requests
 import time
 from idle import send_idle
 
-def send_dance1(ip="192.168.4.1"):
+
+def send_dance3(ip="192.168.4.1"):
     #start idle
     send_idle
 
@@ -108,4 +109,4 @@ def send_dance1(ip="192.168.4.1"):
 
 
 if __name__ == "__main__":
-    send_dance1()
+    send_dance3()
