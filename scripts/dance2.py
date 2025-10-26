@@ -12,7 +12,7 @@ def send_dance2(ip="192.168.4.1"):
 
     try: 
         #move down
-        url = f"http://{ip}/js?json={{\"T\":122,\"b\":0,\"s\":-70,\"e\":150,\"h\":120,\"spd\":60,\"acc\":10}}"
+        url = f"http://{ip}/js?json={{\"T\":122,\"b\":0,\"s\":-70,\"e\":150,\"h\":90,\"spd\":60,\"acc\":10}}"
         try:
             response = requests.get(url)
             print("Dance2 Response:", response.text)
@@ -25,7 +25,7 @@ def send_dance2(ip="192.168.4.1"):
         #for loop
         for i in range(4):
             #move to left
-            url = f"http://{ip}/js?json={{\"T\":122,\"b\":55,\"s\":-70,\"e\":150,\"h\":90,\"spd\":100,\"acc\":60}}"
+            url = f"http://{ip}/js?json={{\"T\":122,\"b\":55,\"s\":-70,\"e\":150,\"h\":70,\"spd\":100,\"acc\":60}}"
             try:
                 response = requests.get(url)
                 print("Dance2 Response:", response.text)
@@ -36,7 +36,7 @@ def send_dance2(ip="192.168.4.1"):
             time.sleep(1.2)     
 
             #move to right
-            url = f"http://{ip}/js?json={{\"T\":122,\"b\":-55,\"s\":-70,\"e\":150,\"h\":170,\"spd\":100,\"acc\":60}}"
+            url = f"http://{ip}/js?json={{\"T\":122,\"b\":-55,\"s\":-70,\"e\":150,\"h\":110,\"spd\":100,\"acc\":60}}"
             try:
                 response = requests.get(url)
                 print("Dance2 Response:", response.text)
