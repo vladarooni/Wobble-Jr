@@ -14,7 +14,8 @@ sys.path.insert(0, os.path.abspath(scripts_dir))
 
 #imports
 from lamp import send_lamp_pose
-
+from wave import send_wave
+from idle import send_idle
 
 @app.route('/')
 def home():
@@ -29,7 +30,15 @@ def command(action):
         except Exception as e:
             print(f"Error running {action}: {e}", 500)
     elif action == 'wave':
-        print("Wave command not yet implemented")
+        try:
+            send_wave()
+        except Exception as e:
+            print(f"Error running {action}: {e}", 500)
+    elif action == 'idle':
+        try:
+            send_idle()
+        except Exception as e:
+            print(f"Error running {action}: {e}", 500)
     else:
         print(f"Unknown command: {action}", 400)
     return f"Running {action}"
