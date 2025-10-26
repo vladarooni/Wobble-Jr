@@ -105,6 +105,8 @@ def send_dance1(ip="192.168.4.1"):
     except Exception as e:
         print("ERROR SENDING CMD: ", e)
 
+    send_idle()
+
 
 
 if __name__ == "__main__":

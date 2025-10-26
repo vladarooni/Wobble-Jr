@@ -2,19 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Wobble Jr Controls</title>
+    <title>Wobble Jr</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   </head>
   <body>
     <h1>Wobble Jr Controls</h1>
 
-    <button onclick="sendCommand('wave')">Wave</button>
-    <button onclick="sendCommand('lamp')">Lamp Mode</button>
-    <button onclick="sendCommand('idle')">Idle</button>
-    <button onclick="sendCommand('ambient')">Ambient</button>
-    <button onclick="sendCommand('dance1')">Dance 1</button>
-    <button onclick="sendCommand('dance2')">Dance 2</button>
-    <button onclick="sendCommand('dance3')">Dance 3</button>
-    <button onclick="sendCommand('bensrequest')">Ben's Request</button>
+    <div class="buttons-container">
+        <button onclick="sendCommand('wave')">Wave</button>
+        <button onclick="sendCommand('lamp')">Lamp Mode</button>
+        <button onclick="sendCommand('idle')">Idle</button>
+        <button onclick="sendCommand('ambient')">Ambient</button>
+        <button onclick="sendCommand('dance1')">Dance 1</button>
+        <button onclick="sendCommand('dance2')">Dance 2</button>
+        <button onclick="sendCommand('dance3')">Dance 3</button>
+        <button onclick="sendCommand('bensrequest')">Animation</button>
+    </div>
 
     <p id="status"></p>
 

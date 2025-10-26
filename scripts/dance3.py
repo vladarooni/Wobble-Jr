@@ -2,7 +2,7 @@
 import requests
 import time
 from ambient import send_ambient_pose
-
+from idle import send_idle
 
 def send_dance3(ip="192.168.4.1"):
     #start ambient
@@ -146,6 +146,8 @@ def send_dance3(ip="192.168.4.1"):
 
     except Exception as e:
         print("ERROR SENDING CMD: ", e)
+
+    send_idle()
 
 
 if __name__ == "__main__":
