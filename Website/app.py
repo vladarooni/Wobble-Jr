@@ -17,6 +17,7 @@ from lamp import send_lamp_pose
 from wave import send_wave
 from idle import send_idle
 from ambient import send_ambient_pose
+from dance1 import send_dance1
 
 @app.route('/')
 def home():
@@ -43,6 +44,11 @@ def command(action):
     elif action == 'ambient':
         try:
             send_ambient_pose()
+        except Exception as e:
+            print(f"Error running {action}: {e}", 500)
+    elif action == 'dance1':
+        try:
+            send_dance1()
         except Exception as e:
             print(f"Error running {action}: {e}", 500)
     else:
