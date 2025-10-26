@@ -16,6 +16,7 @@ sys.path.insert(0, os.path.abspath(scripts_dir))
 from lamp import send_lamp_pose
 from wave import send_wave
 from idle import send_idle
+from ambient import send_ambient_pose
 
 @app.route('/')
 def home():
@@ -37,6 +38,11 @@ def command(action):
     elif action == 'idle':
         try:
             send_idle()
+        except Exception as e:
+            print(f"Error running {action}: {e}", 500)
+    elif action == 'ambient':
+        try:
+            send_ambient_pose()
         except Exception as e:
             print(f"Error running {action}: {e}", 500)
     else:
