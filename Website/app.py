@@ -9,10 +9,10 @@ app = Flask(__name__)
 base_dir = os.path.dirname(os.path.abspath(__file__))        # /path/to/wobble-jr/Website
 scripts_dir = os.path.join(base_dir, '..', 'scripts')        # /path/to/wobble-jr/scripts
 
-# add 'scripts' folder to Python path so we can import lamp.py
+# add 'scripts' folder to python path so we can import _____.py
 sys.path.insert(0, os.path.abspath(scripts_dir))
 
-# Now the import should work
+#imports
 from lamp import send_lamp_pose
 
 
@@ -26,13 +26,13 @@ def command(action):
     if action == 'lamp':
         try:
             send_lamp_pose()
-            return f"Command executed: {action}"
         except Exception as e:
-            return f"Error running {action}: {e}", 500
+            print(f"Error running {action}: {e}", 500)
     elif action == 'wave':
-        return "Wave command not yet implemented"
+        print("Wave command not yet implemented")
     else:
-        return f"Unknown command: {action}", 400
+        print(f"Unknown command: {action}", 400)
+    return f"Running {action}"
 
 
 if __name__ == '__main__':
